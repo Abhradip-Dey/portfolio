@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+    --bg-base: #070707;
+    --text-base: #F5F5F5;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-base);
+    color: var(--text-base);
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a0a0a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #262626;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #404040;
+  }
+}
+
+/* Subtle grid texture overlay */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  transition: background-image 0.3s ease;
+}
+
+.bg-dot-pattern {
+  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+}
+
+/* Glassmorphic border */
+.glass-card {
+  background: rgba(21, 21, 21, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Glow highlight */
+.glow-accent {
+  box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.15);
+}
+
+/* Smooth code block syntax highlights */
+.token-keyword { color: #f43f5e; }
+.token-function { color: #38bdf8; }
+.token-string { color: #34d399; }
+.token-comment { color: #71717a; font-style: italic; }
+.token-number { color: #fb923c; }
+.token-type { color: #a78bfa; }
+
+/* =========================================================
+   Midnight Blue Theme (High-Contrast Sapphire Aesthetic)
+   ========================================================= */
+.theme-midnight {
+  --bg-base: #040914;
+  --text-base: #F0F6FC;
+  background-color: #040914 !important;
+  color: #F0F6FC !important;
+}
+
+.theme-midnight ::-webkit-scrollbar-track {
+  background: #040914;
+}
+
+.theme-midnight ::-webkit-scrollbar-thumb {
+  background: #172554;
+  border-radius: 4px;
+}
+
+.theme-midnight ::-webkit-scrollbar-thumb:hover {
+  background: #1e3a8a;
+}
+
+.theme-midnight .bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.05) 1px, transparent 1px) !important;
+}
+
+/* Midnight Blue Background Replacements */
+.theme-midnight .bg-\[\#070707\] {
+  background-color: #040914 !important;
+}
+
+.theme-midnight .bg-\[\#0a0a0a\] {
+  background-color: #070e1e !important;
+}
+
+.theme-midnight .bg-\[\#050505\] {
+  background-color: #030712 !important;
+}
+
+.theme-midnight .bg-\[\#101010\] {
+  background-color: #091326 !important;
+}
+
+.theme-midnight .bg-\[\#121212\] {
+  background-color: #0b1730 !important;
+}
+
+.theme-midnight .bg-\[\#141414\] {
+  background-color: #0f1e3d !important;
+}
+
+.theme-midnight .bg-\[\#161616\] {
+  background-color: #132448 !important;
+}
+
+.theme-midnight .bg-\[\#0d0d0d\] {
+  background-color: #081124 !important;
+}
+
+.theme-midnight .bg-\[\#080808\] {
+  background-color: #050b18 !important;
+}
+
+.theme-midnight .bg-\[\#0c0c0c\] {
+  background-color: #071020 !important;
+}
+
+/* Midnight Border Overrides */
+.theme-midnight .border-white\/5,
+.theme-midnight .border-white\/\[0\.04\],
+.theme-midnight .border-white\/\[0\.06\],
+.theme-midnight .border-white\/\[0\.08\] {
+  border-color: rgba(56, 189, 248, 0.12) !important;
+}
+
+.theme-midnight .border-white\/10 {
+  border-color: rgba(56, 189, 248, 0.22) !important;
+}
+
+.theme-midnight .border-white\/20 {
+  border-color: rgba(56, 189, 248, 0.35) !important;
+}
+
+.theme-midnight .hover\:border-white\/15:hover,
+.theme-midnight .hover\:border-white\/20:hover {
+  border-color: rgba(56, 189, 248, 0.35) !important;
+}
+
+.theme-midnight .bg-white\/5 {
+  background-color: rgba(56, 189, 248, 0.06) !important;
+}
+
+.theme-midnight .hover\:bg-white\/5:hover,
+.theme-midnight .hover\:bg-white\/10:hover {
+  background-color: rgba(56, 189, 248, 0.12) !important;
+}
+
+.theme-midnight .bg-zinc-900,
+.theme-midnight .bg-zinc-900\/80,
+.theme-midnight .bg-zinc-900\/90 {
+  background-color: #091326 !important;
+}
+
+.theme-midnight .bg-zinc-800 {
+  background-color: #0f1e3d !important;
+}
+
+.theme-midnight .glow-accent {
+  box-shadow: 0 0 30px -5px rgba(56, 189, 248, 0.25) !important;
+}
+
+
